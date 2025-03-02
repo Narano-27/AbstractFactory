@@ -3,10 +3,10 @@ import java.awt.*;
 import java.awt.geom.*;
 import noise.Noise;
 
-public class HandLine implements Drawable  {
-    private double x0, y0, x1, y1;
-    private double controlX, controlY;
-    private Color c;
+public class HandLine implements AbstractLine  {
+    private final double x0, y0, x1, y1;
+    private final double controlX, controlY;
+    private final Color c;
     
     public HandLine(double x0, double y0, double x1, double y1, Color c) {
         // Ajouter du bruit à l'origine et à l'arrivée
@@ -36,9 +36,12 @@ public class HandLine implements Drawable  {
         screen.draw(curve);
     }
     
-    // Getter pour les classes qui en ont besoin (comme HandRectangle)
+    @Override
     public double getX0() { return x0; }
+    @Override
     public double getY0() { return y0; }
+    @Override
     public double getX1() { return x1; }
+    @Override
     public double getY1() { return y1; }
 }
