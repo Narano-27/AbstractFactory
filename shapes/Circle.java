@@ -1,13 +1,15 @@
 package shapes;
-
 import java.awt.*;
 
-public class Circle extends AbstractCircle {
-    private double rad;
+public class Circle implements AbstractCircle {
+    private double cx, cy, rad;
+    private Color c;
     
     public Circle(double cx, double cy, double rad, Color c) {
-        super(cx, cy, c);
+        this.cx = cx;
+        this.cy = cy;
         this.rad = rad;
+        this.c = c;
     }
     
     // Méthode propre à Circle
@@ -15,14 +17,29 @@ public class Circle extends AbstractCircle {
         return rad;
     }
     
-    // Implémentation des méthodes abstraites
+    // Implémentation des méthodes de l'interface
     @Override
-    protected double getRadiusX() {
+    public double getCx() {
+        return cx;
+    }
+    
+    @Override
+    public double getCy() {
+        return cy;
+    }
+    
+    @Override
+    public double getRadiusX() {
         return rad;
     }
     
     @Override
-    protected double getRadiusY() {
+    public double getRadiusY() {
         return rad;
+    }
+    
+    @Override
+    public Color getColor() {
+        return c;
     }
 }
