@@ -15,4 +15,6 @@ The application supports two distinct types of drawing styles:
     - `HandDrawingFactory` - Responsible for creating hand-drawn style shapes.
 
 - **Products:**  
-    - `Line`, `Rectangle`, `Circle` 
+    - `Line`, `Rectangle`, `Circle`
+
+    - we assume that the Rectangle shape uses 4 Line shapes (the reason why there is no AbstractProduct for Rectangle)
